@@ -4,7 +4,7 @@ import {v4 as uuid} from "uuid";
 
 const pool = new Pool({
   user: 'jpuseche',
-  host: 'postgres://jpuseche:VPKiS7bmTwIPdxffhxvKvv4HZzyogrZC@dpg-cjeib86nk9qs73bsadgg-a/adventure_inventory',
+  host: 'dpg-cjeib86nk9qs73bsadgg-a',
   database: 'adventure_inventory',
   password: 'VPKiS7bmTwIPdxffhxvKvv4HZzyogrZC@dpg-cjeib86nk9qs73bsadgg-a',
   port: 5432,
