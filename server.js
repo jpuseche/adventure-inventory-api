@@ -15,9 +15,7 @@ app.use(function (req, res, next) {
 });
 
 app.get('/', async (req, res) => {
-  const { rows } = await tool.testRoot()
-
-  res.json(rows)
+  res.text("El api funciona correctamente")
 })
 
 app.get("/tools", (req, res) => {
