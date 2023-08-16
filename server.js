@@ -8,7 +8,6 @@ let CLIENT_URL = "https://adventure-inventory-api-production.up.railway.app";
 if (app.settings.env === `development`) {
   CLIENT_URL = "http://localhost:3000";
 }
-
 // parse application/json
 app.use(express.json());
 
@@ -51,4 +50,5 @@ app.delete("/tools/:id", (req, res) => {
 
 app.listen(port, () => {
     console.log("adventure-inventory-api is running successfully")
+    console.log(`CLIENT_URL: ${CLIENT_URL}`);
 });
