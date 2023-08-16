@@ -3,11 +3,7 @@ const Pool = pg.Pool;
 import {v4 as uuid} from "uuid";
 
 const pool = new Pool({
-  user: 'wawandco',
-  host: 'localhost',
   database: 'adventure_inventory',
-  password: 'root',
-  port: 5432,
 });
 
 const tool = {};
