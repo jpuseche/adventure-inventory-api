@@ -14,6 +14,12 @@ app.use(function (req, res, next) {
     next();
 });
 
+app.get('/', async (req, res) => {
+  const { rows } = await tool.testRoot()
+
+  res.json(rows)
+})
+
 app.get("/tools", (req, res) => {
   tool.getTools()
   .then(response => {

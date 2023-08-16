@@ -1,16 +1,12 @@
 import pg from "pg";
-const Pool = pg.Pool;
+const pool = pg.Pool;
 import {v4 as uuid} from "uuid";
 
-const pool = new Pool({
-  user: 'jpuseche',
-  host: 'dpg-cjeib86nk9qs73bsadgg-a',
-  database: 'adventure_inventory',
-  password: 'VPKiS7bmTwIPdxffhxvKvv4HZzyogrZC@dpg-cjeib86nk9qs73bsadgg-a',
-  port: 5432,
-});
-
 const tool = {};
+
+tool.testRoot = () => {
+    return pool.query("SELECT * FROM tool");
+}
 
 tool.getTools = () => {
     return new Promise(function(resolve, reject) {
