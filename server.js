@@ -1,6 +1,6 @@
 import express from "express";
 const app = express();
-const port = 8000;
+const port = process.env.PORT || 8000;
 
 import tool from "./tool.js";
 
@@ -14,8 +14,8 @@ app.use(function (req, res, next) {
     next();
 });
 
-app.get('/', async (req, res) => {
-  res.text("El api funciona correctamente")
+app.get('/', (req, res) => {
+  res.send('API is running');
 })
 
 app.get("/tools", (req, res) => {
