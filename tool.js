@@ -3,8 +3,8 @@ const Pool = pg.Pool;
 import {v4 as uuid} from "uuid";
 
 const pool = new Pool({
-  database: 'adventure_inventory',
-});
+    database: 'adventure_inventory',
+  });
 
 const tool = {};
 
