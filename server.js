@@ -45,5 +45,5 @@ app.delete("/tools/:id", (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log("postgres-api is running successfully")
+    console.log("adventure-inventory-api is running successfully")
 });
