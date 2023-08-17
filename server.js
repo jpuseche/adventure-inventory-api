@@ -2,7 +2,11 @@ import express from "express";
 const app = express();
 const port = process.env.PORT || 8000;
 
+import 'dotenv/config';
 import tool from "./tool.js";
+
+const statusCodeOK = 200;
+const statusCodeInternalError = 500;
 
 // parse application/json
 app.use(express.json());
@@ -19,31 +23,37 @@ app.get('/', (req, res) => {
 })
 
 app.get("/tools", (req, res) => {
-  tool.getTools()
+  tool.get()
   .then(response => {
+    console.log(`http status code: ${statusCodeOK}`);
     res.status(200).send(response);
   })
   .catch(error => {
+    console.log(`http status code: ${statusCodeInternalError}`);
     res.status(500).send(error);
   })
 });
 
 app.post("/tools", (req, res) => {
-    tool.createTool(req.body)
+    tool.create(req.body)
     .then(response => {
+      console.log(`http status code: ${statusCodeOK}`);
       res.status(200).send(response);
     })
     .catch(error => {
+      console.log(`http status code: ${statusCodeInternalError}`);
       res.status(500).send(error);
     })
 });
 
 app.delete("/tools/:id", (req, res) => {
-  tool.deleteTool(req.params.id)
+  tool.delete(req.params.id)
   .then(response => {
+    console.log(`http status code: ${statusCodeOK}`);
     res.status(200).send(response);
   })
   .catch(error => {
+    console.log(`http status code: ${statusCodeInternalError}`);
     res.status(500).send(error);
   })
 });
